@@ -29,6 +29,14 @@ spec:
         - containerPort: 27017
         - containerPort: 27018
         - containerPort: 27019
+        volumeMounts:
+          - mountPath: /db/mongo  # ruta donde se monta el volumen en el pod
+            name: mongodb-volume
+      volumes:
+        - name: mongodb-volume
+          persistentVolumeClaim:
+            claimName: mongodb-pvc  # relacion con el claim
+
 ---
 apiVersion: v1
 kind: Service

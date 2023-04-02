@@ -1,0 +1,27 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql-pvc # identificador del claim
+spec:
+  storageClassName: mysql-class # relacion con el volumen
+  accessModes:
+    - ReadWriteOnce   # @1
+  resources:
+    requests:
+      storage: 3Gi    # @2
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mysql-pv
+  labels:
+    type: local
+spec:
+  storageClassName: mysql-class # identificador del volumen
+  capacity:
+    storage: 3Gi    # @2
+  accessModes:
+    - ReadWriteOnce   # @1
+  hostPath:
+    path: /run/desktop/mnt/host/c/pod-data  # ruta donde persisten los datos en mi maquina
+    type: Directory
