@@ -58,4 +58,4 @@ spec:
     name: serverservice-port
   selector:
     app: serverservice
-  type: ClusterIP
+  type: NodePort
