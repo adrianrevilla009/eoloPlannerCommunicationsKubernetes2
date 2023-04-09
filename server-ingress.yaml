@@ -8,7 +8,14 @@ spec:
   rules:
     - http:
         paths:
-          - path: /cluster-ip
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: serverservice
+                port:
+                  number: 8080
+          - path: /cluster-ip/?(.*)
             pathType: Prefix
             backend:
               service:

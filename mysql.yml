@@ -26,7 +26,7 @@ spec:
         ports:
         - containerPort: 3306
         volumeMounts:
-          - mountPath: /db/mysql  # ruta donde se monta el volumen en el pod
+          - mountPath: /data/db  # ruta donde se monta el volumen en el pod
             name: mysql-volume
       volumes:
         - name: mysql-volume

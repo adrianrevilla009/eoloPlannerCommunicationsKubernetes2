@@ -30,7 +30,7 @@ spec:
         - containerPort: 27018
         - containerPort: 27019
         volumeMounts:
-          - mountPath: /db/mongo  # ruta donde se monta el volumen en el pod
+          - mountPath: /data/db  # ruta donde se monta el volumen en el pod
             name: mongodb-volume
       volumes:
         - name: mongodb-volume

@@ -23,5 +23,5 @@ spec:
   accessModes:
     - ReadWriteOnce   # @1
   hostPath:
-    path: /run/desktop/mnt/host/c/pod-data  # ruta donde persisten los datos en mi maquina
+    path: /run/desktop/mnt/host/c/Users/adria/pod-data  # ruta donde persisten los datos en mi maquina
     type: DirectoryOrCreate
